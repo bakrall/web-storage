@@ -1,0 +1,24 @@
+{
+  "name": "web-storage",
+  "version": "1.0.0",
+  "description": "It is to demonstrate how web storage works.",
+  "main": "page.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bakrall/web-storage.git"
+  },
+  "author": "Barbara Stadnik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bakrall/web-storage/issues"
+  },
+  "homepage": "https://github.com/bakrall/web-storage#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-connect": "^5.7.0"
+  }
+}
