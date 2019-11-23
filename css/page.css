@@ -1,0 +1,24 @@
+body {
+  height: 100vh;
+  text-align: center;
+  overflow-y: hidden; }
+
+.main-img {
+  max-width: 80%; }
+
+.notification-container {
+  display: none;
+  background-color: #333;
+  color: #fff;
+  height: 7rem;
+  justify-content: center; }
+
+.with-cookie-notification .notification-container {
+  display: flex; }
+
+.notification-button,
+.notification-text {
+  align-self: center; }
+
+.notification-button {
+  margin-left: 15px; }
