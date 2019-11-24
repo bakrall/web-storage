@@ -21,3 +21,17 @@ body {
 
 .notification-button {
   margin-left: 15px; }
+
+.tabs {
+  margin: 1.25rem auto;
+  border: 1px solid #333;
+  max-width: 80%; }
+  .tabs .tabs-buttons {
+    display: flex;
+    justify-content: space-between; }
+    .tabs .tabs-buttons .button {
+      flex: 1; }
+  .tabs .tab-panel {
+    display: none; }
+    .tabs .tab-panel.active {
+      display: block; }

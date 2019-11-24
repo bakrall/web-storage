@@ -1,0 +1,22 @@
+.tabs {
+	margin: 1.25rem auto;
+	border: 1px solid #333;
+	max-width: 80%;
+
+	.tabs-buttons {
+		display: flex;
+		justify-content: space-between;
+
+		.button {
+			flex: 1;
+		}
+	}
+
+	.tab-panel {
+		display: none;
+
+		&.active {
+			display: block;
+		}
+	}
+}

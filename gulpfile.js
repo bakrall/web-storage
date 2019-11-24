@@ -3,7 +3,8 @@
 
 const gulp = require('gulp'),
   connect = require('gulp-connect'),
-  sass = require('gulp-sass');
+  sass = require('gulp-sass'),
+  concat = require('gulp-concat');
 
 function runServer() {
   connect.server({
@@ -17,6 +18,7 @@ function compileScss() {
       .src('app/assets/scss/*.scss')
       .pipe(sass())
       .on('error', sass.logError)
+      .pipe(concat('page.css'))
       .pipe(gulp.dest('app/assets/css'))
   )
 }
