@@ -15,68 +15,70 @@
         	<p class="notification-text">Do you agree to gather information about you? :)</p>
         	<button class="notification-button">ACCEPT</button>
         </div>
-        <div class="img-container">
-        	<img class="main-img" src="assets/img/butterfly.jpg" alt="" />
-        </div>
+        <main>
+            <div class="img-container">
+            	<img class="main-img" src="assets/img/butterfly.jpg" alt="" />
+            </div>
 
-        <!-- https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-2/tabs.html -->
-        <div class="tabs">
-          <div class="tabs-buttons" role="tablist" aria-label="Entertainment">
-            <button class="button" 
-                    role="tab"
-                    aria-selected="true"
-                    aria-controls="swan-tab"
-                    id="swan">
-              Swan
-            </button>
-            <button class="button"
-                    role="tab"
-                    aria-selected="false"
-                    aria-controls="tit-tab"
-                    id="tit"
-                    tabindex="-1">
-              Tit
-            </button>
-            <button class="button"          
-                    role="tab"
-                    aria-selected="false"
-                    aria-controls="jay-tab"
-                    id="jay"
-                    tabindex="-1">
-              Jay
-            </button>
-          </div>
-          <div class="tab-panel active"
-               tabindex="0"
-               role="tabpanel"
-               id="swan-tab"
-               aria-labelledby="swan">
-            <p>
-              Swans usually mate for life, although “divorce” sometimes occurs, particularly following nesting failure, and if a mate dies, the remaining swan will take up with another. The number of eggs in each clutch ranges from three to eight.
-              Source: https://en.wikipedia.org/wiki/Swan
-            </p>
-          </div>
-          <div class="tab-panel"
-               tabindex="0"
-               role="tabpanel"
-               id="tit-tab"
-               aria-labelledby="tit">
-            <p>
-              These birds are mainly small, stocky, woodland species with short, stout bills. Some have crests. They range in length from 10 to 22 cm. They are adaptable birds, with a mixed diet including seeds and insects.[3] Many species live around human habitation and come readily to bird feeders for nuts or seed, and learn to take other foods.
-              Source: https://en.wikipedia.org/wiki/Tit_(bird)
-            </p>
-          </div>
-          <div class="tab-panel"
-               tabindex="0"
-               role="tabpanel"
-               id="jay-tab"
-               aria-labelledby="jay">
-            <p>
-                Jays are several species of medium-sized, usually colorful and noisy, passerine birds in the crow family, Corvidae. The names jay and magpie are somewhat interchangeable, and the evolutionary relationships are rather complex. For example, the Eurasian magpie seems more closely related to the Eurasian jay than to the East Asian blue and green magpies, whereas the blue jay is not closely related to either.
-                Source: https://en.wikipedia.org/wiki/Jay
-            </p>
-          </div>
-        </div>
+            <!-- https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-2/tabs.html -->
+            <div class="tabs">
+              <div class="tabs-buttons" role="tablist" aria-label="Entertainment">
+                <button class="button" 
+                        role="tab"
+                        aria-selected="true"
+                        aria-controls="swan-tab"
+                        id="swan">
+                  Swan
+                </button>
+                <button class="button"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="tit-tab"
+                        id="tit"
+                        tabindex="-1">
+                  Tit
+                </button>
+                <button class="button"          
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="jay-tab"
+                        id="jay"
+                        tabindex="-1">
+                  Jay
+                </button>
+              </div>
+              <div class="tab-panel active"
+                   tabindex="0"
+                   role="tabpanel"
+                   id="swan-tab"
+                   aria-labelledby="swan">
+                <p>
+                  Swans usually mate for life, although “divorce” sometimes occurs, particularly following nesting failure, and if a mate dies, the remaining swan will take up with another. The number of eggs in each clutch ranges from three to eight.
+                  Source: https://en.wikipedia.org/wiki/Swan
+                </p>
+              </div>
+              <div class="tab-panel"
+                   tabindex="0"
+                   role="tabpanel"
+                   id="tit-tab"
+                   aria-labelledby="tit">
+                <p>
+                  These birds are mainly small, stocky, woodland species with short, stout bills. Some have crests. They range in length from 10 to 22 cm. They are adaptable birds, with a mixed diet including seeds and insects.[3] Many species live around human habitation and come readily to bird feeders for nuts or seed, and learn to take other foods.
+                  Source: https://en.wikipedia.org/wiki/Tit_(bird)
+                </p>
+              </div>
+              <div class="tab-panel"
+                   tabindex="0"
+                   role="tabpanel"
+                   id="jay-tab"
+                   aria-labelledby="jay">
+                <p>
+                    Jays are several species of medium-sized, usually colorful and noisy, passerine birds in the crow family, Corvidae. The names jay and magpie are somewhat interchangeable, and the evolutionary relationships are rather complex. For example, the Eurasian magpie seems more closely related to the Eurasian jay than to the East Asian blue and green magpies, whereas the blue jay is not closely related to either.
+                    Source: https://en.wikipedia.org/wiki/Jay
+                </p>
+              </div>
+            </div>
+        </main>
 
         <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"

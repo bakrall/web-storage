@@ -1,10 +1,5 @@
 body {
-	height: 100vh;
 	text-align: center;
-}
-
-.main-img {
-	max-width: 80%;
 }
 
 .notification-container {
@@ -13,17 +8,35 @@ body {
 	color: #fff;
 	height: 7rem;
 	justify-content: center;
+
+	.with-cookie-notification & {
+		display: flex;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+
+	.notification-button,
+	.notification-text {
+		align-self: center;
+	}
+
+	.notification-button {
+		margin-left: 15px;
+	}
 }
 
-.with-cookie-notification .notification-container {
-	display: flex;
+main {
+	max-width: 80%;
+	margin: 0 auto;
+
+	@media (min-width: 1300px) {
+		max-width: 60%;
+	}
+
+	.main-img {
+		max-width: 100%;
+	}
 }
 
-.notification-button,
-.notification-text {
-	align-self: center;
-}
-
-.notification-button {
-	margin-left: 15px;
-}
