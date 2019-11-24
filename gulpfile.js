@@ -6,21 +6,23 @@ const gulp = require('gulp'),
   sass = require('gulp-sass');
 
 function runServer() {
-  connect.server();
+  connect.server({
+    root: 'app'
+  });
 }
 
 function compileScss() {
   return (
     gulp
-      .src('scss/*.scss')
+      .src('app/assets/scss/*.scss')
       .pipe(sass())
       .on('error', sass.logError)
-      .pipe(gulp.dest('css'))
+      .pipe(gulp.dest('app/assets/css'))
   )
 }
 
 function watchFiles() {
-  gulp.watch('scss/*.scss', compileScss);
+  gulp.watch('app/assets/scss/*.scss', compileScss);
 }
 
 const build = gulp.parallel(runServer, watchFiles);

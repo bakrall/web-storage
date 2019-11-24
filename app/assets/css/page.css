@@ -1,7 +1,6 @@
 body {
   height: 100vh;
-  text-align: center;
-  overflow-y: hidden; }
+  text-align: center; }
 
 .main-img {
   max-width: 80%; }
