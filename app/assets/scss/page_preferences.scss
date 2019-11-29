@@ -1,0 +1,9 @@
+.page-preferences {
+	.options {
+		display: none;
+
+		&.active {
+			display: block;
+		}
+	}
+}

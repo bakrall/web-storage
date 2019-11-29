@@ -1,4 +1,4 @@
-const tabButtons = $('.button'),
+const tabButtons = $('.tabs .button'),
 	tabPanels = $('.tab-panel');
 
 function showTabPanel(event) {
@@ -6,14 +6,6 @@ function showTabPanel(event) {
 		panelId = target.attr('aria-controls');
 
 	toggleActivePanel(panelId);
-}
-
-function keepSelectedTabPanel() {
-	const alreadySelectdTabPanel = getSelectedTab();
-
-	if (alreadySelectdTabPanel === null) return;
-
-	toggleActivePanel(alreadySelectdTabPanel);
 }
 
 function toggleActivePanel(element) {
@@ -31,6 +23,14 @@ function rememberSelectedTab(element) {
 
 function getSelectedTab() {
 	return localStorage.getItem('selectedTab');
+}
+
+function keepSelectedTabPanel() {
+	const alreadySelectdTabPanel = getSelectedTab();
+
+	if (alreadySelectdTabPanel === null) return;
+
+	toggleActivePanel(alreadySelectdTabPanel);
 }
 
 tabButtons.on('click', showTabPanel);

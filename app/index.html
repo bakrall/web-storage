@@ -11,6 +11,33 @@
     </head>
     <body>
         <h1>Page</h1>
+        <div class="page-preferences">
+            <h2>
+                <button class="button" aria-expanded="false">
+                  Page preferences
+                </button> 
+            </h2>
+            <div class="options">
+               <form>
+                    <fieldset>
+                        <legend>Background color</legend>
+                        <input class="choice" type="radio" id="black" name="background" value="black">
+                        <label for="black">black</label><br/>
+
+                        <input class="choice" type="radio" id="white" name="background" value="white">
+                        <label for="white">white</label><br/>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Font size</legend>
+                        <input class="choice" type="radio" id="standard" name="fontsize" value="standard">
+                        <label for="standard">standard letters</label><br/>
+
+                        <input class="choice" type="radio" id="big" name="fontsize" value="big">
+                        <label for="big">big letters</label><br/>
+                   </fieldset>
+               </form>
+            </div>
+        </div>
         <div class="notification-container">
         	<p class="notification-text">Do you agree to gather information about you? :)</p>
         	<button class="notification-button">ACCEPT</button>
@@ -84,6 +111,7 @@
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
+        <script src="js/page_preferences.js"></script>
         <script src="js/cookie.js"></script>
         <script src="js/tabs.js"></script>
     </body>
