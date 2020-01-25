@@ -6,12 +6,10 @@ let background,
 	fontsize;
 
 pagePreferencesButton.on('click', toggleOptions);
-choices.on({
-	'click': () => {
-		// checkPreferences,
-		sendDataToURL()
-	}
-});
+choices.on('click', function() {
+		checkPreferences.call(this);
+		sendDataToBackend.call(this);
+	});
 
 function toggleOptions(event) {
 	pagePreferencesOptions.toggleClass('active');
@@ -32,20 +30,24 @@ function setPageAccordingToPreferences(background = 'white', fontsize = 'standar
 	localStorage.setItem('fontsize', fontsize);
 }
 
-function sendDataToURL() {
-	const postData = $('#page-preferences-form').serializeArray().reduce(function(a, x) { a[x.name] = x.value; return a; }, {});
+function sendDataToBackend() {
+	const formData = $('#page-preferences-form').serializeArray(),
+		postData = formData.reduce((obj, input) => { 
+			obj[input.name] = input.value; 
+			return obj; 
+		}, {});
 
 	$.ajax({
-	    url: 'http://rest.learncode.academy/api/bakrall/friends',
+	    url: 'http://localhost:3000/preferences',
 	    type: "POST",
 	    dataType: 'json',
 	    data: JSON.stringify(postData),
-	    contentType: 'application/json;charset=UTF-8',
+	    contentType: 'multipart/form-data',
 	    success: function( data, textStatus, jQxhr ){
-	        $('#response').html( JSON.stringify( data ) );
+	        $('#response').html(data);
 	    },
 	    error: function( jqXhr, textStatus, errorThrown ){
-	        console.log( errorThrown );
+	        console.log(errorThrown);
 	    }
 	})
 }
