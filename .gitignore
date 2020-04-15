@@ -23,5 +23,3 @@ $RECYCLE.BIN/
 # =========================
 
 #other
-.gitignore
-node_modules
