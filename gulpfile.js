@@ -6,11 +6,11 @@ const gulp = require('gulp'),
   sass = require('gulp-sass'),
   concat = require('gulp-concat');
 
-function runServer() {
-  connect.server({
-    root: 'app'
-  });
-}
+// function runServer() {
+//   connect.server({
+//     root: 'app'
+//   });
+// }
 
 function compileScss() {
   return (
@@ -27,6 +27,6 @@ function watchFiles() {
   gulp.watch('app/assets/scss/*.scss', compileScss);
 }
 
-const build = gulp.parallel(runServer, watchFiles);
+const build = gulp.parallel(watchFiles);
 
 exports.default = build;

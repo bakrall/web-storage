@@ -40,8 +40,15 @@
             </div>
         </div>
         <div class="notification-container">
-        	<p class="notification-text">Do you agree to gather information about you? :)</p>
-        	<button class="notification-button">ACCEPT</button>
+          <p class="notification-text">Do you agree to gather information about you? :)</p>
+          <form class="notification-form" method="POST" action="/cookies">
+              <input id="agree" name="policyResponse" type="hidden" value="true">
+              <button class="notification-button">Yes</button>
+          </form>
+          <form class="notification-form" method="POST" action="http://localhost:3000/cookies">
+              <input id="disagree" name="policyResponse" type="hidden" value="true">
+              <button class="notification-button">No</button>
+          </form>
         </div>
         <main>
             <div class="img-container">
@@ -113,7 +120,7 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
         <script src="js/page_preferences.js"></script>
-        <script src="js/cookie.js"></script>
+        <!-- <script src="js/cookie.js"></script> -->
         <script src="js/tabs.js"></script>
     </body>
 </html>
