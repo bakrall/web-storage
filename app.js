@@ -12,10 +12,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text({type: '*/*'}));
 
 app.use(cors());
-//Serve the page
+//serve the page - resolves Cannot GET / error
 app.use(express.static('app'));
 
-//Access the parse results as request.body
+//access the parse results as request.body
 app.post('/preferences', (req, res,) => {
   	res.json(req.body);
   	console.log(req.body);
@@ -27,9 +27,12 @@ app.post('/cookies', (req, res) => {
 	console.log(req.body.policyResponse);
 
 	const cookieOptions = {
-		expires: new Date(Date.now() + 1000)
+		/*previously expiration time was not in advance of time of cookie's creation, so `document.cookie`
+		always returned "" */
+		expires: new Date(Date.now() + 100000 * 360)
 	}
 
+	//at this stage cookie is set in a browser but it is deleted after redirect
 	res.cookie('policyResponse', cookieVal, cookieOptions).redirect('/index.html');
 	console.log(res);
 });
