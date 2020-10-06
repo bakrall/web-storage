@@ -24,13 +24,13 @@ body {
 	color: #fff;
 	height: 7rem;
 	justify-content: center;
-
-	.with-cookie-notification & {
-		display: flex;
-		position: absolute;
+			position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
+
+	.without-cookie-confirmed & {
+		display: flex;
 	}
 
 	.notification-button,
@@ -40,6 +40,10 @@ body {
 
 	.notification-button {
 		margin-left: 15px;
+	}
+
+	.notification-form {
+		display: flex;
 	}
 }
 
@@ -60,4 +64,3 @@ main {
 		max-width: 100%;
 	}
 }
-

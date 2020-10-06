@@ -16,18 +16,20 @@ body {
   background-color: #333;
   color: #fff;
   height: 7rem;
-  justify-content: center; }
-  .with-cookie-notification .notification-container {
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0; }
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0; }
+  .without-cookie-confirmed .notification-container {
+    display: flex; }
   .notification-container .notification-button,
   .notification-container .notification-text {
     align-self: center; }
   .notification-container .notification-button {
     margin-left: 15px; }
+  .notification-container .notification-form {
+    display: flex; }
 
 .button {
   cursor: pointer;

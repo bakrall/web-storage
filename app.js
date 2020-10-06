@@ -24,17 +24,15 @@ app.post('/preferences', (req, res,) => {
 app.post('/cookies', (req, res) => {
 
 	const cookieVal = req.body.policyResponse;
-	console.log(req.body.policyResponse);
 
 	const cookieOptions = {
-		/*previously expiration time was not in advance of time of cookie's creation, so `document.cookie`
-		always returned "" */
+		/*previously expiration time was not in advance of time of cookie's creation (outdated cookie), 
+		so `document.cookie` always returned "" */
 		expires: new Date(Date.now() + 100000 * 360)
 	}
 
 	//at this stage cookie is set in a browser but it is deleted after redirect
 	res.cookie('policyResponse', cookieVal, cookieOptions).redirect('/index.html');
-	console.log(res);
 });
 
 app.listen(3000, () => {

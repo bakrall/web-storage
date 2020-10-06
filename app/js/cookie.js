@@ -1,62 +1,41 @@
-const cookieButton = $('.notification-button'),
-	cookieNotification = $('.notification-container');
-let cookiePresent;
+const cookieButton = $('.notification-button');
+const cookieNotification = $('.notification-container');
 
-function getAllCookies() {
-	const cookies = document.cookie.split('; ');
+function checkCookie() {
+	//this regex returns `null` in case cookie is not present
+	const hasCookie = /policyResponse=(\w.*;?)/.exec(document.cookie);
 
-	return cookies.reduce(getCookiesNamesAndValues, {});
-}
-
-function getCookiesNamesAndValues(acc, cur) {
-	const cookieParts = cur.split('='),
-		key = cookieParts[0],
-		value = cookieParts[1];
-
-	acc[key] = value;
-	
-	return acc;
-}
-
-function createCookie() {
-	let now = new Date();
-	now.setFullYear(now.getFullYear() + 1);
-	document.cookie='needs_acceptance=acceptance_cookie;expires=' + now.toUTCString();
-
-	hideCookieNotification();
-}
-
-function checkCookieExistence() {
-	const presentCookies = getAllCookies();
-
-	for (let cookieName in presentCookies) {
-		if (cookieName === 'needs_acceptance') {
-			cookiePresent = true;
+	if(hasCookie) {
+		switch(hasCookie[1]) {
+			case 'true':
+				hideCookieNotification();
+				return;
+			case 'false':
+				showCookieNotification();
+				return;
 		}
-	}
-
-	if (!cookiePresent) {
+	} else {
 		showCookieNotification();
 	}
 }
 
 function hideCookieNotification() {
-	$('body').removeClass('with-cookie-notification');
+	$('body').removeClass('without-cookie-confirmed');
 }
 
 function showCookieNotification() {
-	$('body').addClass('with-cookie-notification');
+	$('body').addClass('without-cookie-confirmed');
 }
 
 function bindUIEvents() {
   	cookieButton.click(function() {
-  		createCookie();
+  		getConsent();
   	});
 }
 
 function init() {
 	bindUIEvents();
-	checkCookieExistence();
+	checkCookie();
 }
 
 init();
